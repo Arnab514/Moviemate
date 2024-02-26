@@ -8,11 +8,11 @@ const CustomPagination = ({setPage , pageCount = 10}) => {
         window.scroll(0,0)
     }
 
-    const theme = createTheme({
-        palette: {
-            type : "dark"
-        }
-    })
+    // const theme = createTheme({
+    //     palette: {
+    //         type : "dark"
+    //     }
+    // })
 
   return (
     <div
@@ -21,15 +21,14 @@ const CustomPagination = ({setPage , pageCount = 10}) => {
         display: "flex",
         justifyContent: "center",
         marginTop: 10,
+        color: 'white'
     }}>
-    <ThemeProvider theme={theme} >
       <Pagination
       onChange={(e) => handlePageChange(e.target.textContent)} 
       count={pageCount}
       color="primary"
       hideNextButton
       hidePrevButton/>
-    </ThemeProvider>
     </div>
   )
 }

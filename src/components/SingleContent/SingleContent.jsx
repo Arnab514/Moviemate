@@ -6,7 +6,7 @@ import { Badge } from '@mui/material'
 const SingleContent = ({ id, poster, title, media_type, date, rating}) => {
   return (
     <div className='media'>
-      <Badge badgeContent = {rating} color = { rating > 6 ? "primary" : "secondary"} />
+      <Badge badgeContent = {rating} color = { rating > 6 ? "success" : "warning"} />
       <img className='poster' src = {poster ? `${img_300}/${poster}` : unavailable } alt = {title}/>
       <b className='title'>{title}</b>
       <span className='subTitle'>

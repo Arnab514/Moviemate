@@ -7,10 +7,8 @@ import WhatshotIcon from '@mui/icons-material/Whatshot';
 import TheatersIcon from '@mui/icons-material/Theaters';
 import TvIcon from '@mui/icons-material/Tv';
 import SearchIcon from '@mui/icons-material/Search';
-import { blueGrey } from '@mui/material/colors';
 import { useNavigate } from "react-router-dom";
-import { createTheme } from '@mui/material';
-import {ThemeProvider} from '@mui/material';
+
 
 export default function MainNav() {
   const [value, setValue] = React.useState(0);
@@ -40,6 +38,7 @@ export default function MainNav() {
         position: "fixed",
         bottom: 0,
         zIndex: 100,
+        color : 'black'
         // backgroundColor: blueGrey,
     }}>
       <BottomNavigation
