@@ -29,7 +29,7 @@ const Trending = () => {
           <SingleContent 
           key = {e.id} 
           id = {e.id} 
-          poster = {e.backdrop_path}
+          poster = {e.poster_path}
           title = {e.name || e.title}
           media_type = {e.media_type}
           date = {e.first_air_date || e.release_date}

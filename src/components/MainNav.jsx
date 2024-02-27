@@ -8,10 +8,17 @@ import TheatersIcon from '@mui/icons-material/Theaters';
 import TvIcon from '@mui/icons-material/Tv';
 import SearchIcon from '@mui/icons-material/Search';
 import { useNavigate } from "react-router-dom";
+import { createTheme, ThemeProvider } from '@mui/material';
 
 
 export default function MainNav() {
   const [value, setValue] = React.useState(0);
+
+  const darkTheme = createTheme({
+    palette: {
+      mode: 'dark'
+    }
+  })
 
 
   const navigate = useNavigate()
@@ -41,17 +48,19 @@ export default function MainNav() {
         color : 'black'
         // backgroundColor: blueGrey,
     }}>
-      <BottomNavigation
-        showLabels
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
-        }}>
-        <BottomNavigationAction  label="Trending" icon={<WhatshotIcon />} />
-        <BottomNavigationAction  label="Movies" icon={<TheatersIcon />} />
-        <BottomNavigationAction  label="TV Shows" icon={<TvIcon />} />
-        <BottomNavigationAction  label="Search" icon={<SearchIcon />} />
-      </BottomNavigation>
+      <ThemeProvider theme={ darkTheme }>
+        <BottomNavigation
+          showLabels
+          value={value}
+          onChange={(event, newValue) => {
+            setValue(newValue);
+          }}>
+          <BottomNavigationAction  label="Trending" icon={<WhatshotIcon />} />
+          <BottomNavigationAction  label="Movies" icon={<TheatersIcon />} />
+          <BottomNavigationAction  label="TV Shows" icon={<TvIcon />} />
+          <BottomNavigationAction  label="Search" icon={<SearchIcon />} />
+        </BottomNavigation>
+      </ThemeProvider>
     </Box>
   );
 }
